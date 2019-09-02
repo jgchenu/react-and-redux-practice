@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { setFilter } from '@/filter/actions';
-import Link from '@/filter/views/Link';
+import Link from './Link';
 
 //  ownProps 本身由上级组件传递过来的props
 const mapStateToProps = (state, ownProps) =>( {

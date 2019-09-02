@@ -1,7 +1,6 @@
 import  { connect }  from 'react-redux';
 import * as filterTypes from '@/filter/constants';
-import Todos from '@/todos/views/Todos';
-import { addTodo, removeTodo, toggleTodo } from '@/todos/actions';
+import TodoList from './TodoList';
 
 const selectVisiableTodos = (todos,filter) => {
   switch(filter){
@@ -20,10 +19,6 @@ const mapStateToProps = (state) => ({
   todos: selectVisiableTodos(state.todos, state.filter)
 })
 
-const mapDispatchToProps = {
-  onAddTodo: addTodo,
-  onRemoveTodo: removeTodo,
-  onToggleTodo: toggleTodo
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(Todos);
+
+export default connect(mapStateToProps)(TodoList);

@@ -1,9 +1,6 @@
 import { createStore, combineReducers, compose, applyMiddleware,  } from 'redux';
 import { reducer as todoReducer } from '@/todos';
 import { reducer as filterReducer } from '@/filter';
-import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
-// import Perf from 'react-addons-perf';
-// 在react16 只需要在url后加上?react_pref
 const reducer = combineReducers({
   todos: todoReducer,
   filter: filterReducer
@@ -15,12 +12,12 @@ const win = window;
 const middlewares = [];
 
 if (process.env.NODE_ENV !=='production'){
-  middlewares.push(reduxImmutableStateInvariant());
+  // middlewares.push();
 }
 
 const storeEnhancers = compose(
   applyMiddleware (...middlewares) ,
-  (win && win.devToolsExtension) ? win.devToolsExtension () : f => f);
+  (win && win.__REDUX_DEVTOOLS_EXTENSION__) ? win.__REDUX_DEVTOOLS_EXTENSION__ () : f => f);
 
 const store = createStore(reducer,{},storeEnhancers);
 

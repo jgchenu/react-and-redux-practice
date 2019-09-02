@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from '@/filter/views/container';
+import Link from '@/filter/views/link';
 import * as FilterTypes from '@/filter/constants.js'
 
 import './style.css';
