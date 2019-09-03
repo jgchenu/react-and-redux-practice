@@ -40,8 +40,8 @@ class AddTodo extends React.Component {
     return (
       <div className="add-todo">
         <form onSubmit={this.onSubmit}>
-          <input type="text" className='add-todo-input' ref={this.refInput} value={this.state.value} onChange={this.handleChange}/>
-          <button type="submit" className='add-todo-submit'>add</button>
+          <input type="text" className='new-todo' ref={this.refInput} value={this.state.value} onChange={this.handleChange}/>
+          <button type="submit" className='add-btn'>add</button>
         </form>
       </div>
     )

@@ -13,8 +13,8 @@ class TodoItem extends React.Component {
           readOnly 
           onClick={onToggle}
         />
-       <span>{text}</span>
-       <button onClick={onRemove}>x</button>
+       <span className="text">{text}</span>
+       <button className="remove" onClick={onRemove}>x</button>
       </li>
     );
   }
