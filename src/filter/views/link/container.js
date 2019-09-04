@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { setFilter } from '@/filter/actions';
+import { setFilter } from '../../actions';
 import Link from './Link';
 
 //  ownProps 本身由上级组件传递过来的props

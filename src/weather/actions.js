@@ -1,4 +1,4 @@
-import { FETCH_STARTED, FETCH_SUCCESS, FETCH_FAIL } from '@/weather/actionTypes';
+import { FETCH_STARTED, FETCH_SUCCESS, FETCH_FAIL } from './actionTypes';
 
 let nextSeqid = 0;
 
@@ -26,7 +26,7 @@ export const fetchWeather = (cityCode) => {
       }
     }
     dispatchIfValid(fetchWeatherStarted());
-    fetch(apiUrl).then((response) => {
+    return fetch(apiUrl).then((response) => {
       if(response.status !== 200){
         throw new Error('Fail to get response with status', response.status);
       }

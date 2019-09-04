@@ -9,9 +9,9 @@ class Link extends React.Component {
   }
 
   static propTypes = {
-    active: PropTypes.bool.isRequired,
-    children: PropTypes.node.isRequired,
-    onClick: PropTypes.func.isRequired
+    active: PropTypes.bool,
+    children: PropTypes.node,
+    onClick: PropTypes.func
   }
 
   handleClick(ev) {

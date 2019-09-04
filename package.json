@@ -137,7 +137,12 @@
     ]
   },
   "devDependencies": {
-    "prop-types": "^15.7.2"
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "prop-types": "^15.7.2",
+    "react-test-renderer": "^16.9.0",
+    "redux-mock-store": "^1.5.3",
+    "sinon": "^7.4.2"
   },
   "proxy": "http://www.weather.com.cn/"
 }
