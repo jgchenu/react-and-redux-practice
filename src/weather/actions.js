@@ -1,5 +1,6 @@
 import { FETCH_STARTED, FETCH_SUCCESS, FETCH_FAIL } from '@/weather/actionTypes';
 
+let nextSeqid = 0;
 
 export const fetchWeatherStarted = () => ({
   type: FETCH_STARTED
@@ -18,18 +19,24 @@ export const fetchWeatherFail = (error) => ({
 export const fetchWeather = (cityCode) => {
   return (dispatch) => {
     const apiUrl = `/data/cityinfo/${cityCode}.html`;
-    dispatch(fetchWeatherStarted());
+    const seqid = ++ nextSeqid;
+    const dispatchIfValid = (action) => {
+      if(seqid === nextSeqid) {
+        return dispatch(action)
+      }
+    }
+    dispatchIfValid(fetchWeatherStarted());
     fetch(apiUrl).then((response) => {
       if(response.status !== 200){
         throw new Error('Fail to get response with status', response.status);
       }
       response.json().then(responseJson => {
-        dispatch(fetchWeatherSuccess(responseJson.weatherinfo));
+        dispatchIfValid(fetchWeatherSuccess(responseJson.weatherinfo));
       }).catch(error=>{
-        throw new Error('Invalid json response :', error);
+        dispatchIfValid(fetchWeatherFail(error));
       })
     }).catch(error => {
-      dispatch(fetchWeatherFail(error));
+      dispatchIfValid(fetchWeatherFail(error));
     })
   }
 }

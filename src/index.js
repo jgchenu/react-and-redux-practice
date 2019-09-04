@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import { Provider } from 'react-redux';
 import store from '@/store';
-import TodoApp from '@/TodoApp';
-// import WeatherApp from '@/WeatherApp';
+// import TodoApp from '@/TodoApp';
+import WeatherApp from '@/WeatherApp';
 
 
-ReactDOM.render(<Provider store={store}><TodoApp /></Provider>, document.getElementById('root'));
+ReactDOM.render(<Provider store={store}><WeatherApp /></Provider>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
