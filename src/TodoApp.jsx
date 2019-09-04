@@ -1,13 +1,13 @@
 import React from 'react';
-import { view as Filter } from '@/filter';
-import { view as Todos } from '@/todos';
+import  Filter from '@/filter/views/filter';
+import  Todos from '@/todos/views/todos';
 import CountDown from '@/countDown'
 
 function TodoApp() {
   return (
     <div className="todo-app">
       <CountDown startCount={10}>
-        {(count) => <div style={{color: 'red'}}>{count}</div> }
+        {(count) => count>0 ? <div style={{color: 'red'}}>{count}</div> : '恭喜倒计时成功' }
       </CountDown>
       <Filter />
       <Todos />

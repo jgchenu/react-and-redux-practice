@@ -4,6 +4,8 @@ import './index.css';
 import { Provider } from 'react-redux';
 import store from '@/store';
 import TodoApp from '@/TodoApp';
+// import WeatherApp from '@/WeatherApp';
+
 
 ReactDOM.render(<Provider store={store}><TodoApp /></Provider>, document.getElementById('root'));
 

@@ -1,15 +1,19 @@
 import { createStore, combineReducers, compose, applyMiddleware,  } from 'redux';
-import { reducer as todoReducer } from '@/todos';
-import { reducer as filterReducer } from '@/filter';
+import thunkMiddleware from 'redux-thunk';
+import todoReducer from '@/todos/reducer';
+import filterReducer from '@/filter/reducer';
+import weatherReducer from '@/weather/reducer';
+
 const reducer = combineReducers({
   todos: todoReducer,
-  filter: filterReducer
+  filter: filterReducer,
+  weather: weatherReducer,
 })
 
 const win = window;
 
 // 用于放置redux中间件
-const middlewares = [];
+const middlewares = [ thunkMiddleware ];
 
 if (process.env.NODE_ENV !=='production'){
   // middlewares.push();
