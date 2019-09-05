@@ -1,5 +1,5 @@
 import { createSelector } from  'reselect';
-import * as filterTypes from '@/filter/constants';
+import * as filterTypes from '../filter/constants';
 
 
 const getFilter = state => state.filter;

@@ -1,5 +1,5 @@
-import { ALL } from '@/filter/constants';
-import * as actionTypes from '@/filter/actionTypes';
+import { ALL } from './constants';
+import * as actionTypes from './actionTypes';
 
 export default (state = ALL, action) => {
   switch (action.type) {

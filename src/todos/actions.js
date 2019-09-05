@@ -1,4 +1,4 @@
-import { ADD_TODO, REMOVE_TODO, TOGGLE_TODO } from '@/todos/actionTypes';
+import { ADD_TODO, REMOVE_TODO, TOGGLE_TODO } from './actionTypes';
 
 let todoId = 0; 
 

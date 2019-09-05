@@ -1,6 +1,6 @@
 import  { connect }  from 'react-redux';
 import TodoList from './TodoList';
-import  { selectVisibleTodos } from '@/todos/selector'
+import  { selectVisibleTodos } from '../../selector'
 
 const mapStateToProps = (state) => ({
   todos: selectVisibleTodos(state)
