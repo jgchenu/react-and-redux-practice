@@ -17,6 +17,7 @@
     "css-loader": "2.1.1",
     "dotenv": "6.2.0",
     "dotenv-expand": "4.2.0",
+    "ejs": "^2.7.1",
     "eslint": "^6.1.0",
     "eslint-config-react-app": "^5.0.1",
     "eslint-loader": "2.2.1",
@@ -25,6 +26,7 @@
     "eslint-plugin-jsx-a11y": "6.2.3",
     "eslint-plugin-react": "7.14.3",
     "eslint-plugin-react-hooks": "^1.6.1",
+    "express": "^4.17.1",
     "file-loader": "3.0.1",
     "fs-extra": "7.0.1",
     "html-webpack-plugin": "4.0.0-beta.5",
@@ -66,7 +68,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "server_prod": "NODE_ENV=production nodemon server/index.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -140,9 +143,12 @@
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "prop-types": "^15.7.2",
+    "react-hot-loader": "^4.12.12",
     "react-test-renderer": "^16.9.0",
     "redux-mock-store": "^1.5.3",
-    "sinon": "^7.4.2"
+    "sinon": "^7.4.2",
+    "webpack-dev-middleware": "^3.7.1",
+    "webpack-hot-middleware": "^2.25.0"
   },
   "proxy": "http://www.weather.com.cn/"
 }
