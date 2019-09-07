@@ -1,13 +1,16 @@
-const isProduction = process.env.NODE_ENV === 'production';
-const app  =  isProduction ? require('./app.prod') : require('./app.dev');
+require('babel-register');
+require('isomorphic-fetch');
 
-if(!isProduction) {
+const isProductionMode = (process.env.NODE_ENV === 'production');
+const app = isProductionMode ? require('./app.prod.js'): require('./app.dev.js');
+
+if (!isProductionMode) {
   process.env.NODE_ENV = 'development';
 }
 
-const PORT = process.env.PROT || 9000 ;
+const PORT = process.env.PORT || 9000;
 
 app.listen(PORT, function() {
-  console.log('running in'+ process.env.NODE_ENV);
-  console.log ('listening on port :' + PORT);
-})
+  console.log('running in ' + (isProductionMode ? 'producition' : 'development') + ' mode');
+  console.log('listening on port: ' + PORT);
+});
